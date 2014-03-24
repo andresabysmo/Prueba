@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\mcamañiero\Documents\_PROYECTOS\ws provisioning\24-marzo-2014\" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Perfil1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/TvCable.Integration.BusinessLogic.pdb" publishTime="02/07/2014 16:04:52" />
+    <file relUrl="bin/TvCable.Integration.LibBase.pdb" publishTime="02/07/2014 16:04:52" />
+    <file relUrl="TvCableIntegrationServiceInternal.asmx" publishTime="10/01/2013 15:58:26" />
+    <file relUrl="TvCableIntegrationService.svc" publishTime="10/01/2013 15:58:26" />
+    <file relUrl="bin/TvCable.Integration.Service.pdb" publishTime="03/24/2014 12:11:40" />
+    <file relUrl="bin/TvCable.Integration.BusinessLogic.dll" publishTime="02/07/2014 16:04:52" />
+    <file relUrl="Web.config" publishTime="03/24/2014 12:12:47" />
+    <file relUrl="bin/TvCable.Integration.DAL.dll" publishTime="02/07/2014 16:04:52" />
+    <file relUrl="bin/TvCable.Integration.LibBase.dll" publishTime="02/07/2014 16:04:52" />
+    <file relUrl="bin/TvCable.Integration.Service.dll" publishTime="03/24/2014 12:11:40" />
+    <file relUrl="bin/TvCable.Integration.DTO.pdb" publishTime="02/07/2014 16:04:51" />
+    <file relUrl="bin/TvCable.Integration.DAL.pdb" publishTime="02/07/2014 16:04:52" />
+    <file relUrl="bin/TvCable.Integration.DTO.dll" publishTime="02/07/2014 16:04:51" />
+  </publishProfile>
+</publishData>

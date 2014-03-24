@@ -1,0 +1,34 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB/f:Configuration.cs" caret="0" fromTop="0" />
+      <File id="C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB/f:TvCableIntegrationBl.cs" caret="0" fromTop="0" />
+      <File id="141EF66B-9077-4891-A56E-A14068B7F283/f:TvCableIntegrationDal.cs" caret="878" fromTop="18" />
+      <File id="A72EA077-83F4-48BA-879F-38933A7A0B6B/f:Constants.cs" caret="1839" fromTop="34" />
+      <File id="98321E52-C77E-4022-8964-485F484588C7/f:ClsSqlClientHelper.cs" caret="0" fromTop="0" />
+      <File id="98321E52-C77E-4022-8964-485F484588C7/f:Util.cs" caret="0" fromTop="0" />
+      <File id="0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5/f:ITvCableIntegrationService.cs" caret="0" fromTop="0" />
+      <File id="0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5/f:TvCableIntegrationService.svc.cs" caret="0" fromTop="0" />
+      <File id="0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5/f:TvCableIntegrationServiceInternal.asmx.cs" caret="0" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits />
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

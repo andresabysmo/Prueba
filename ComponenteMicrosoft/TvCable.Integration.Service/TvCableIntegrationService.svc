@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TvCable.Integration.Service.TvCableIntegrationService" CodeBehind="TvCableIntegrationService.svc.cs" %>

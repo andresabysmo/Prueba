@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCable.Integration.Service", "TvCable.Integration.Service\TvCable.Integration.Service.csproj", "{0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCable.Integration.BusinessLogic", "TvCable.Integration.BusinessLogic\TvCable.Integration.BusinessLogic.csproj", "{C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCable.Integration.DAL", "TvCable.Integration.DAL\TvCable.Integration.DAL.csproj", "{141EF66B-9077-4891-A56E-A14068B7F283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCable.Integration.DTO", "TvCable.Integration.DTO\TvCable.Integration.DTO.csproj", "{A72EA077-83F4-48BA-879F-38933A7A0B6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCable.Integration.LibBase", "TvCable.Integration.LibBase\TvCable.Integration.LibBase.csproj", "{98321E52-C77E-4022-8964-485F484588C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141EF66B-9077-4891-A56E-A14068B7F283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141EF66B-9077-4891-A56E-A14068B7F283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141EF66B-9077-4891-A56E-A14068B7F283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141EF66B-9077-4891-A56E-A14068B7F283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A72EA077-83F4-48BA-879F-38933A7A0B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A72EA077-83F4-48BA-879F-38933A7A0B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A72EA077-83F4-48BA-879F-38933A7A0B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A72EA077-83F4-48BA-879F-38933A7A0B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98321E52-C77E-4022-8964-485F484588C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98321E52-C77E-4022-8964-485F484588C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98321E52-C77E-4022-8964-485F484588C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98321E52-C77E-4022-8964-485F484588C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

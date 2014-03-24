@@ -1,0 +1,9 @@
+D:\BAYTEQ\CFloZam\Desarrollos\TvCable\CodeV2010\TvCable.Integration.LibBase\bin\Debug\TvCable.Integration.LibBase.dll
+D:\BAYTEQ\CFloZam\Desarrollos\TvCable\CodeV2010\TvCable.Integration.LibBase\bin\Debug\TvCable.Integration.LibBase.pdb
+D:\BAYTEQ\CFloZam\Desarrollos\TvCable\CodeV2010\TvCable.Integration.LibBase\obj\Debug\TvCable.Integration.LibBase.dll
+D:\BAYTEQ\CFloZam\Desarrollos\TvCable\CodeV2010\TvCable.Integration.LibBase\obj\Debug\TvCable.Integration.LibBase.pdb
+C:\Source\ComponenteMicrosoft\TvCable.Integration.LibBase\bin\Debug\TvCable.Integration.LibBase.dll
+C:\Source\ComponenteMicrosoft\TvCable.Integration.LibBase\bin\Debug\TvCable.Integration.LibBase.pdb
+C:\Source\ComponenteMicrosoft\TvCable.Integration.LibBase\obj\Debug\TvCable.Integration.LibBase.csprojResolveAssemblyReference.cache
+C:\Source\ComponenteMicrosoft\TvCable.Integration.LibBase\obj\Debug\TvCable.Integration.LibBase.dll
+C:\Source\ComponenteMicrosoft\TvCable.Integration.LibBase\obj\Debug\TvCable.Integration.LibBase.pdb

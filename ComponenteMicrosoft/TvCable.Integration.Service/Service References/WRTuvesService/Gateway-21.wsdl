@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://204.51.113.116:8080/tuves/provisionamiento/gate/" name="Gateway-2" targetNamespace="http://204.51.113.116:8080/tuves/provisionamiento/gate/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://204.51.113.116:8080/tuves/provisionamiento/gate/">
+      <xsd:element name="status">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="statusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="status_webservice" type="xsd:string" />
+            <xsd:element name="description" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="install">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element maxOccurs="1" name="Settopbox" type="tns:SettopboxType" />
+            <xsd:element maxOccurs="1" name="Packs" type="tns:PacksType" />
+            <xsd:element name="mastercard" nillable="true" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="installResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="disconnect">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="disconnectResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reconnect">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element maxOccurs="1" name="Packs" type="tns:PacksType" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reconnectResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="uninstall">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="uninstallResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addPacks">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element maxOccurs="1" name="Packs" type="tns:PacksType" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addPacksResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removePacks">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element maxOccurs="1" name="Packs" type="tns:PacksType" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removePacksResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reSendKey">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reSendKeyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updatePIN">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="pin" type="tns:PINType" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updatePINResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="message" type="tns:MessageType" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMessageResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateFirmware">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateFirmwareResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInformation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInformationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+            <xsd:element name="Information" type="tns:InformationType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rescanChannels">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" nillable="true" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rescanChannelsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:simpleType name="MessageType">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="150" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PINType">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:minLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="SettopboxType">
+        <xsd:sequence>
+          <xsd:element name="code">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="16" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="brand" type="xsd:string" />
+          <xsd:element name="model" type="xsd:string" />
+          <xsd:element name="firmware" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SlaveSmartCards">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="item">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:double" />
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InformationType">
+        <xsd:sequence>
+          <xsd:element name="smartcard" type="xsd:double" />
+          <xsd:element maxOccurs="1" name="Settopbox" type="tns:SettopboxType" />
+          <xsd:element name="pin" type="tns:PINType" />
+          <xsd:element name="Packs" type="tns:PacksType" />
+          <xsd:element name="mastercard" nillable="true" type="xsd:double" />
+          <xsd:element name="Slavesmartcards" nillable="true" type="tns:SlaveSmartCards" />
+          <xsd:element name="dealer" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PacksType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="item">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="6" />
+                <xsd:minLength value="1" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addCarrier">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="carrier" type="xsd:int" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addCarrierResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="viewSetTopBoxID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="viewSetTopBoxIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetSetTopBox">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetSetTopBoxResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCodeZone">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="code">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="3" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCodeZoneResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rebootSetTopBox">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rebootSetTopBoxResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="forceUpdateFirmware">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="forceUpdateFirmwareResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateControlParental">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="pin" type="tns:PINType" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateControlParentalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateMenuPass">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+            <xsd:element name="sequence" type="xsd:int" />
+            <xsd:element name="smartcard" type="xsd:double" />
+            <xsd:element name="pin" type="tns:PINType" />
+            <xsd:element name="user_id" nillable="true" type="xsd:string" />
+            <xsd:element name="reference_number" nillable="true" type="xsd:string" />
+            <xsd:element name="notes" nillable="true" type="xsd:string" />
+            <xsd:element name="customer_id" type="xsd:string" />
+            <xsd:element name="zone">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="64" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateMenuPassResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:int" />
+            <xsd:element name="answer" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getSmartcardsInfo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getSmartcardsInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="return" type="xsd:string" />
+            <xsd:element name="SmartCardInfo" type="tns:SmartCardInfoType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="SmartCardInfoType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Info" type="tns:InfoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InfoType">
+        <xsd:sequence>
+          <xsd:element name="smartcard" type="xsd:double" />
+          <xsd:element name="settopbox">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="16" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="mastercard" nillable="true" type="xsd:double" />
+          <xsd:element name="Packs" type="tns:SmartcardPacksType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SmartcardPacksType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Pack" type="tns:PackType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PackType">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="core" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="statusRequest">
+    <wsdl:part name="in" element="tns:status" />
+  </wsdl:message>
+  <wsdl:message name="statusResponse">
+    <wsdl:part name="out" element="tns:statusResponse" />
+  </wsdl:message>
+  <wsdl:message name="installRequest">
+    <wsdl:part name="in" element="tns:install" />
+  </wsdl:message>
+  <wsdl:message name="installResponse">
+    <wsdl:part name="out" element="tns:installResponse" />
+  </wsdl:message>
+  <wsdl:message name="disconnectRequest">
+    <wsdl:part name="in" element="tns:disconnect" />
+  </wsdl:message>
+  <wsdl:message name="disconnectResponse">
+    <wsdl:part name="out" element="tns:disconnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="reconnectRequest">
+    <wsdl:part name="in" element="tns:reconnect" />
+  </wsdl:message>
+  <wsdl:message name="reconnectResponse">
+    <wsdl:part name="out" element="tns:reconnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="uninstallRequest">
+    <wsdl:part name="in" element="tns:uninstall" />
+  </wsdl:message>
+  <wsdl:message name="uninstallResponse">
+    <wsdl:part name="out" element="tns:uninstallResponse" />
+  </wsdl:message>
+  <wsdl:message name="addPacksRequest">
+    <wsdl:part name="in" element="tns:addPacks" />
+  </wsdl:message>
+  <wsdl:message name="addPacksResponse">
+    <wsdl:part name="out" element="tns:addPacksResponse" />
+  </wsdl:message>
+  <wsdl:message name="removePacksRequest">
+    <wsdl:part name="in" element="tns:removePacks" />
+  </wsdl:message>
+  <wsdl:message name="removePacksResponse">
+    <wsdl:part name="out" element="tns:removePacksResponse" />
+  </wsdl:message>
+  <wsdl:message name="reSendKeyRequest">
+    <wsdl:part name="in" element="tns:reSendKey" />
+  </wsdl:message>
+  <wsdl:message name="reSendKeyResponse">
+    <wsdl:part name="out" element="tns:reSendKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePINRequest">
+    <wsdl:part name="in" element="tns:updatePIN" />
+  </wsdl:message>
+  <wsdl:message name="updatePINResponse">
+    <wsdl:part name="out" element="tns:updatePINResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendMessageRequest">
+    <wsdl:part name="in" element="tns:sendMessage" />
+  </wsdl:message>
+  <wsdl:message name="sendMessageResponse">
+    <wsdl:part name="out" element="tns:sendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateFirmwareRequest">
+    <wsdl:part name="in" element="tns:updateFirmware" />
+  </wsdl:message>
+  <wsdl:message name="updateFirmwareResponse">
+    <wsdl:part name="out" element="tns:updateFirmwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInformationRequest">
+    <wsdl:part name="in" element="tns:getInformation" />
+  </wsdl:message>
+  <wsdl:message name="getInformationResponse">
+    <wsdl:part name="out" element="tns:getInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="rescanChannelsRequest">
+    <wsdl:part name="in" element="tns:rescanChannels" />
+  </wsdl:message>
+  <wsdl:message name="rescanChannelsResponse">
+    <wsdl:part name="out" element="tns:rescanChannelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addCarrierRequest">
+    <wsdl:part name="in" element="tns:addCarrier" />
+  </wsdl:message>
+  <wsdl:message name="addCarrierResponse">
+    <wsdl:part name="out" element="tns:addCarrierResponse" />
+  </wsdl:message>
+  <wsdl:message name="viewSetTopBoxIDRequest">
+    <wsdl:part name="in" element="tns:viewSetTopBoxID" />
+  </wsdl:message>
+  <wsdl:message name="viewSetTopBoxIDResponse">
+    <wsdl:part name="out" element="tns:viewSetTopBoxIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="resetSetTopBoxRequest">
+    <wsdl:part name="in" element="tns:resetSetTopBox" />
+  </wsdl:message>
+  <wsdl:message name="resetSetTopBoxResponse">
+    <wsdl:part name="out" element="tns:resetSetTopBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCodeZoneRequest">
+    <wsdl:part name="in" element="tns:updateCodeZone" />
+  </wsdl:message>
+  <wsdl:message name="updateCodeZoneResponse">
+    <wsdl:part name="out" element="tns:updateCodeZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="rebootSetTopBoxRequest">
+    <wsdl:part name="in" element="tns:rebootSetTopBox" />
+  </wsdl:message>
+  <wsdl:message name="rebootSetTopBoxResponse">
+    <wsdl:part name="out" element="tns:rebootSetTopBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="forceUpdateFirmwareRequest">
+    <wsdl:part name="in" element="tns:forceUpdateFirmware" />
+  </wsdl:message>
+  <wsdl:message name="forceUpdateFirmwareResponse">
+    <wsdl:part name="out" element="tns:forceUpdateFirmwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateControlParentalRequest">
+    <wsdl:part name="in" element="tns:updateControlParental" />
+  </wsdl:message>
+  <wsdl:message name="updateControlParentalResponse">
+    <wsdl:part name="out" element="tns:updateControlParentalResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateMenuPassRequest">
+    <wsdl:part name="in" element="tns:updateMenuPass" />
+  </wsdl:message>
+  <wsdl:message name="updateMenuPassResponse">
+    <wsdl:part name="out" element="tns:updateMenuPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSmartcardsInfoRequest">
+    <wsdl:part name="in" element="tns:getSmartcardsInfo" />
+  </wsdl:message>
+  <wsdl:message name="getSmartcardsInfoResponse">
+    <wsdl:part name="out" element="tns:getSmartcardsInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Gateway-2">
+    <wsdl:operation name="status">
+      <wsdl:input message="tns:statusRequest" />
+      <wsdl:output message="tns:statusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="install">
+      <wsdl:input message="tns:installRequest" />
+      <wsdl:output message="tns:installResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="disconnect">
+      <wsdl:input message="tns:disconnectRequest" />
+      <wsdl:output message="tns:disconnectResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="reconnect">
+      <wsdl:input message="tns:reconnectRequest" />
+      <wsdl:output message="tns:reconnectResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="uninstall">
+      <wsdl:input message="tns:uninstallRequest" />
+      <wsdl:output message="tns:uninstallResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addPacks">
+      <wsdl:input message="tns:addPacksRequest" />
+      <wsdl:output message="tns:addPacksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removePacks">
+      <wsdl:input message="tns:removePacksRequest" />
+      <wsdl:output message="tns:removePacksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="reSendKey">
+      <wsdl:input message="tns:reSendKeyRequest" />
+      <wsdl:output message="tns:reSendKeyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePIN">
+      <wsdl:input message="tns:updatePINRequest" />
+      <wsdl:output message="tns:updatePINResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMessage">
+      <wsdl:input message="tns:sendMessageRequest" />
+      <wsdl:output message="tns:sendMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateFirmware">
+      <wsdl:input message="tns:updateFirmwareRequest" />
+      <wsdl:output message="tns:updateFirmwareResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getInformation">
+      <wsdl:input message="tns:getInformationRequest" />
+      <wsdl:output message="tns:getInformationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="rescanChannels">
+      <wsdl:input message="tns:rescanChannelsRequest" />
+      <wsdl:output message="tns:rescanChannelsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addCarrier">
+      <wsdl:input message="tns:addCarrierRequest" />
+      <wsdl:output message="tns:addCarrierResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="viewSetTopBoxID">
+      <wsdl:input message="tns:viewSetTopBoxIDRequest" />
+      <wsdl:output message="tns:viewSetTopBoxIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="resetSetTopBox">
+      <wsdl:input message="tns:resetSetTopBoxRequest" />
+      <wsdl:output message="tns:resetSetTopBoxResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCodeZone">
+      <wsdl:input message="tns:updateCodeZoneRequest" />
+      <wsdl:output message="tns:updateCodeZoneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="rebootSetTopBox">
+      <wsdl:input message="tns:rebootSetTopBoxRequest" />
+      <wsdl:output message="tns:rebootSetTopBoxResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="forceUpdateFirmware">
+      <wsdl:input message="tns:forceUpdateFirmwareRequest" />
+      <wsdl:output message="tns:forceUpdateFirmwareResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateControlParental">
+      <wsdl:input message="tns:updateControlParentalRequest" />
+      <wsdl:output message="tns:updateControlParentalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMenuPass">
+      <wsdl:input message="tns:updateMenuPassRequest" />
+      <wsdl:output message="tns:updateMenuPassResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getSmartcardsInfo">
+      <wsdl:input message="tns:getSmartcardsInfoRequest" />
+      <wsdl:output message="tns:getSmartcardsInfoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Gateway-2SOAP" type="tns:Gateway-2">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="status">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/status" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="install">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/install" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disconnect">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/disconnect" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reconnect">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/reconnect" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uninstall">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/uninstall" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPacks">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/addPacks" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePacks">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/removePacks" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reSendKey">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/reSendKey" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePIN">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/updatePIN" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMessage">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/sendMessage" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateFirmware">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/updateFirmware" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformation">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/getInformation" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rescanChannels">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/rescanChannels" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCarrier">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/addCarrier" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewSetTopBoxID">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/viewSetTopBoxID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetSetTopBox">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/resetSetTopBox" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCodeZone">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/updateCodeZone" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rebootSetTopBox">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/rebootSetTopBox" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="forceUpdateFirmware">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/forceUpdateFirmware" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateControlParental">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/updateControlParental" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMenuPass">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/updateMenuPass" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSmartcardsInfo">
+      <soap:operation soapAction="http://204.51.113.116:8080/tuves/provisionamiento/gate/getSmartcardsInfo" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Gateway-2">
+    <wsdl:port name="Gateway-2SOAP" binding="tns:Gateway-2SOAP">
+      <soap:address location="http://204.51.113.116:8080/tuves/provisionamiento/gate" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

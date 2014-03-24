@@ -1,0 +1,7 @@
+<Modules>
+  <Module PersistentId="C621DEBF-8FC0-4AC8-A8A9-770B8DBF7ECB" ModuleId="TvCable.Integration.BusinessLogic" />
+  <Module PersistentId="141EF66B-9077-4891-A56E-A14068B7F283" ModuleId="TvCable.Integration.DAL" />
+  <Module PersistentId="98321E52-C77E-4022-8964-485F484588C7" ModuleId="TvCable.Integration.LibBase" />
+  <Module PersistentId="A72EA077-83F4-48BA-879F-38933A7A0B6B" ModuleId="TvCable.Integration.DTO" />
+  <Module PersistentId="0FBA66FA-91DB-4F8B-8AC5-82D3508E24D5" ModuleId="TvCable.Integration.Service" />
+</Modules>
